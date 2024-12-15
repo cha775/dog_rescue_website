@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="petcare.css" />
+    <title>Pet Care|little pawss</title>
+    <style>
+        /* Same styles as before for cart icon, modal, and product layout */
+        /* Cart Icon */
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+/* Cart Icon */
+#cart-icon {
+            margin-top: 10px; /* Adds spacing below the navbar */
+            margin-left: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #cart-icon span {
+            background-color: #ff5722;
+            color: #fff;
+            
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Cart Container (Overlay) */
+        #cart-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            padding: 20px;
+            display: none;
+        }
+
+        #cart-container.show {
+            transform: translateX(0);
+            display: block;
+        }
+
+        #cart-container h3 {
+            margin-top:10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            max-height: 60%;
+        }
+
+        #cart-items li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        /* Product name, price, and button display styles */
+        .product-details {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #cart-items li button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart-items li button:hover {
+            background-color: #d32f2f;
+        }
+
+        #cart-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(5, 5, 116);
+        }
+
+        .cart-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .cart-btn:hover {
+            background-color: #388E3C;
+        }
+
+        #close-cart {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="logo">
+          <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+          Little Paws
+        </a>
+      
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      
+        <div class="nav__link hide">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" />
+                <button class="search-btn">Search</button>
+              </div>
+          <div class="dropdown">
+            <a href="index.html">Home</a>
+            <!--<div class="dropdown-content">
+              <a href="#subhome1">Sub Home 1</a>
+              <a href="#subhome2">Sub Home 2</a>
+            </div>-->
+          </div>
+          <div class="dropdown">
+            <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="petfood.html">SHOP</a>
+            <div class="dropdown-content">
+              <a href="petfood.html">PET FOOD</a>
+              <a href="petcare.html">PET CARE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="about.html">ABOUT</a>
+            <div class="dropdown-content">
+              <a href="about.html">OUR STORY</a>
+              <a href="about.html#contact-section">CONTACT US</a>
+              <a href="about.html#testimonials">TESTIMONIALS</a>
+            </div>
+          </div>
+          <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+        
+        </div>
+        <!--<label class="hamburger-icon" for="checkbox-menu">
+          
+        </label>
+        <input type="checkbox" id="checkbox-menu" />
+        <nav class="mobile-menu">
+          <ul>
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+        
+          </ul>
+        </nav>-->
+      </nav><br><br><br><br><br>
+     <!-- Cart Icon -->
+    <div id="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <!-- Cart Container -->
+    <div id="cart-container">
+        <div id="close-cart">×</div>
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">
+            Total: ₹<span id="total-price">0</span>
+        </div>
+        <button class="cart-btn" id="buy-all-btn">Buy All</button>
+    </div>
+
+    <!-- Cart Modal 
+    <div id="cart-modal" class="hidden">
+        <div class="cart-modal-content">
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <div id="cart-total-modal">
+                <h4>Total: ₹<span id="total-price-modal">0</span></h4>
+            </div>
+            <button id="buy-all-btn">Buy All</button>
+            <button id="close-cart">Close</button>
+        </div>
+    </div>-->
+
+</div>
+      <<div class="product-container">
+        <div class="product-item">
+            <img src="product1.jpg" alt="Pet Collar">
+            <div class="product-details">
+                <h3>Pet Collar</h3>
+                <p>Price: ₹250</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Collar" data-price="250" data-img="product1.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product2.jpg" alt="Pet Bed">
+            <div class="product-details">
+                <h3>Pet Bed</h3>
+                <p>Price: ₹1500</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Bed" data-price="1500" data-img="product2.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product3.jpg" alt="Pet Leash">
+            <div class="product-details">
+                <h3>Pet Leash</h3>
+                <p>Price: ₹450</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Leash" data-price="450" data-img="product3.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product4.jpg" alt="Pet Shampoo">
+            <div class="product-details">
+                <h3>Pet Shampoo</h3>
+                <p>Price: ₹350</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Shampoo" data-price="350" data-img="product4.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product5.jpg" alt="Pet Bowl">
+            <div class="product-details">
+                <h3>Pet Bowl</h3>
+                <p>Price: ₹200</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Bowl" data-price="200" data-img="product5.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product6.jpg" alt="Pet Toy">
+            <div class="product-details">
+                <h3>Pet Toy</h3>
+                <p>Price: ₹350</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Toy" data-price="350" data-img="product6.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product7.jpg" alt="Pet Jacket">
+            <div class="product-details">
+                <h3>Pet Jacket</h3>
+                <p>Price: ₹800</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Jacket" data-price="800" data-img="product7.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product8.jpg" alt="Pet Harness">
+            <div class="product-details">
+                <h3>Pet Harness</h3>
+                <p>Price: ₹600</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Harness" data-price="600" data-img="product8.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product9.jpg" alt="Pet Carrier">
+            <div class="product-details">
+                <h3>Pet Carrier</h3>
+                <p>Price: ₹1200</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Carrier" data-price="1200" data-img="product9.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product10.jpg" alt="Pet Towel">
+            <div class="product-details">
+                <h3>Pet Towel</h3>
+                <p>Price: ₹150</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Towel" data-price="150" data-img="product10.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product11.jpg" alt="Pet Brush">
+            <div class="product-details">
+                <h3>Pet Brush</h3>
+                <p>Price: ₹300</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Brush" data-price="300" data-img="product11.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product12.jpg" alt="Pet Boots">
+            <div class="product-details">
+                <h3>Pet Boots</h3>
+                <p>Price: ₹650</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Boots" data-price="650" data-img="product12.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product13.jpg" alt="Pet Sweater">
+            <div class="product-details">
+                <h3>Pet Sweater</h3>
+                <p>Price: ₹900</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Sweater" data-price="900" data-img="product13.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product14.jpg" alt="Pet Sunscreen">
+            <div class="product-details">
+                <h3>Pet Sunscreen</h3>
+                <p>Price: ₹500</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Sunscreen" data-price="500" data-img="product14.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product15.jpg" alt="Pet Diaper">
+            <div class="product-details">
+                <h3>Pet Diaper</h3>
+                <p>Price: ₹300</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Diaper" data-price="300" data-img="product15.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product16.jpg" alt="Pet T-shirt">
+            <div class="product-details">
+                <h3>Pet T-shirt</h3>
+                <p>Price: ₹400</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet T-shirt" data-price="400" data-img="product16.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product17.jpg" alt="Pet Muzzle">
+            <div class="product-details">
+                <h3>Pet Muzzle</h3>
+                <p>Price: ₹450</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Muzzle" data-price="450" data-img="product17.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product18.jpg" alt="Pet Carrier Bag">
+            <div class="product-details">
+                <h3>Pet Carrier Bag</h3>
+                <p>Price: ₹1100</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Carrier Bag" data-price="1100" data-img="product18.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product19.jpg" alt="Pet Cooling Mat">
+            <div class="product-details">
+                <h3>Pet Cooling Mat</h3>
+                <p>Price: ₹700</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Cooling Mat" data-price="700" data-img="product19.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="product20.jpg" alt="Pet Gate">
+            <div class="product-details">
+                <h3>Pet Gate</h3>
+                <p>Price: ₹1600</p>
+            </div>
+            <div class="product-buttons">
+                <button class="add-to-cart-btn" data-name="Pet Gate" data-price="1600" data-img="product20.jpg">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    
+
+        <script>
+            // Initialize total price and cart
+            let totalPrice = 0;
+            let cart = [];
+    
+            // Elements
+            const cartIcon = document.getElementById('cart-icon');
+            const cartContainer = document.getElementById('cart-container');
+            const cartItemsList = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const totalPriceElement = document.getElementById('total-price');
+            const closeCartButton = document.getElementById('close-cart');
+            const checkoutButton = document.getElementById('buy-all-btn');
+    
+            // Event listener for "Add to Cart" buttons
+            const cartButtons = document.querySelectorAll('.add-to-cart-btn');
+            cartButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    // Get product details from the button's data attributes
+                    const productName = button.getAttribute('data-name');
+                    const productPrice = parseInt(button.getAttribute('data-price'), 10);
+                    const productImg = button.getAttribute('data-img');
+    
+                    // Add product to cart
+                    cart.push({ name: productName, price: productPrice, img: productImg });
+    
+                    // Update total price
+                    totalPrice += productPrice;
+    
+                    // Update cart count and total price
+                    cartCount.textContent = cart.length;
+                    totalPriceElement.textContent = totalPrice;
+    
+                    // Add the product to the cart items list (Only name and price)
+                    // Add the product to the cart items list
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <img src="${productImg}" alt="${productName}" style="width: 30px; height: 30px; margin-right: 10px;">
+                    ${productName} - ₹${productPrice}
+                    <button class="remove-btn">Remove</button>
+                `;
+    
+                    // Remove product from cart
+                    li.querySelector('.remove-btn').addEventListener('click', () => {
+                        removeFromCart(cart.length - 1, li, productPrice);
+                    });
+    
+                    cartItemsList.appendChild(li);
+                });
+            });
+    
+            // Open cart container
+            cartIcon.addEventListener('click', () => {
+                cartContainer.classList.add('show');
+            });
+    
+            // Close cart container
+            closeCartButton.addEventListener('click', () => {
+                cartContainer.classList.remove('show');
+            });
+    
+            // Remove product from cart
+            function removeFromCart(index, li, productPrice) {
+                cart.splice(index, 1);
+                cartItemsList.removeChild(li);
+    
+                // Update total price
+                totalPrice -= productPrice;
+                totalPriceElement.textContent = totalPrice;
+    
+                // Update cart count
+                cartCount.textContent = cart.length;
+            }
+    
+            // Buy All
+            checkoutButton.addEventListener('click', () => {
+                alert('Proceeding to checkout...');
+            });
+        </script>
+    
+    
+      
+</body>
+<script src="pet.js"></script>
+<script src="Product.js"></script>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="volunteer.css">
+  <title>Volunteer with Little Paws</title>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+        <nav class="nav">
+            <a href="/" class="logo">
+              <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+              Little Paws
+            </a>
+          
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          
+            <div class="nav__link hide">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input" />
+                    <button class="search-btn">Search</button>
+                  </div>
+              <div class="dropdown">
+                <a href="index.html">Home</a>
+                <!--<div class="dropdown-content">
+                  <a href="#subhome1">Sub Home 1</a>
+                  <a href="#subhome2">Sub Home 2</a>
+                </div>-->
+              </div>
+              <div class="dropdown">
+                <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="petfood.html">SHOP</a>
+                <div class="dropdown-content">
+                  <a href="petfood.html">PET FOOD</a>
+                  <a href="petcare.html">PET CARE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="about.html">ABOUT</a>
+                <div class="dropdown-content">
+                  <a href="about.html">OUR STORY</a>
+                  <a href="about.html#contact-section">CONTACT US</a>
+                  <a href="about.html#testimonials">TESTIMONIALS</a>
+                </div>
+              </div>
+              <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+            
+            </div>
+          </nav>
+  </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!-- Volunteer Information -->
+  <main>
+    <section class="volunteer-section">
+        <div class="volunteer-box">
+          <h2>Become a Hero for Our Furry Friends!</h2>
+          <p>
+            Join our dedicated team of volunteers at Little Paws and make a real difference in the lives of abandoned and rescued animals. 
+            Whether you’re caring for dogs and cats, helping with events, or fundraising, your support is invaluable.
+          </p>
+          <h3>As a Volunteer, You Can Expect To:</h3>
+          <ul class="volunteer-list">
+            <li>🐾 Work directly with animals and provide them with love and care</li>
+            <li>🐾 Participate in exciting adoption drives</li>
+            <li>🐾 Help organize impactful fundraisers and community events</li>
+            <li>🐾 Spread awareness about animal welfare and the importance of adoption</li>
+          </ul>
+          <p>We welcome all passionate animal lovers to join us in making a difference!</p>
+          <button class="sign-up-btn" onclick.location="volunteer-form">Sign Up to Volunteer</button>
+        </div>
+      </section>
+</div>
+
+    <!-- Volunteer Registration Form -->
+    
+    <section class="volunteer-form">
+      <h2>Volunteer Registration Form</h2>
+      <form id="volunteerForm">
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="availability">Availability:</label>
+          <select id="availability" name="availability">
+            <option value="weekends">Weekends</option>
+            <option value="weekdays">Weekdays</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Why do you want to volunteer?</label>
+          <textarea id="message" name="message" placeholder="Tell us why you're interested in volunteering..." rows="5"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      
+      <script src="Volunteer.js"></script>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Little Paws | Together, we make a difference.</p>
+  </footer>
+</body>
+</html>

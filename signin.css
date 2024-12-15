@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  
+  header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: auto;
+  }
+  
+  /* Auth Container */
+  .auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Social Login Buttons */
+  .social-login {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .social-login button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn {
+    background-color: #4CAF50; /* green */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41; /* darker green */
+  }
+  
+  .facebook-btn {
+    background-color: #3b5998;
+    color: white;
+  }
+  
+  .switch-form {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .switch-form a {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .switch-form a:hover {
+    text-decoration: underline;
+  }
+
+  .forgot-password{
+    font-size:smaller;
+  }
+  
+  /* Hide Registration Form Initially 
+  .hide {
+    display: none;
+  }*/
+  

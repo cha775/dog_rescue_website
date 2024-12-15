@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Food Sales | Little Paws</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pethood.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="nav">
+        <a href="/" class="logo">
+          <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+          Little Paws
+        </a>
+      
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      
+        <div class="nav__link hide">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" />
+                <button class="search-btn">Search</button>
+              </div>
+          <div class="dropdown">
+            <a href="index.html">Home</a>
+            <!--<div class="dropdown-content">
+              <a href="#subhome1">Sub Home 1</a>
+              <a href="#subhome2">Sub Home 2</a>
+            </div>-->
+          </div>
+          <div class="dropdown">
+            <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="petfood.html">SHOP</a>
+            <div class="dropdown-content">
+              <a href="petfood.html">PET FOOD</a>
+              <a href="petcare.html">PET CARE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="about.html">ABOUT</a>
+            <div class="dropdown-content">
+              <a href="about.html">OUR STORY</a>
+              <a href="about.html#contact-section">CONTACT US</a>
+              <a href="about.html#testimonials">TESTIMONIALS</a>
+            </div>
+          </div>
+          <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+        
+        </div>
+      </nav><br><br><br><br>
+       <!-- Cart Icon -->
+    <div id="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <!-- Cart Container -->
+    <div id="cart-container">
+        <div id="close-cart">×</div>
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">
+            Total: ₹<span id="total-price">0</span>
+        </div>
+        <button class="cart-btn" id="buy-all-btn">Buy All</button>
+    </div>
+  </header>
+  <!-- Pet Food Section -->
+  <section class="pet-food-section">
+    <h1>Pet Food</h1>
+    <p>Browse our premium selection of pet food for your furry friends. We offer high-quality, nutritious food that ensures your pets stay healthy and happy.</p>
+
+    <div class="product-card">
+        <img src="petfood1.jpg" alt="Pet Food 1">
+        <h3>Premium Dog Food</h3>
+        <p>Perfect for all dog breeds, providing essential nutrients and vitamins for your dog's health.</p>
+        <p class="price">₹2500</p>
+        <button class="add-to-cart" data-product="Premium Dog Food" data-price="2500" data-img="petfood1.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Premium Dog Food" data-price="2500" data-img="petfood1.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood2.jpg" alt="Pet Food 2">
+        <h3>Healthy Cat Food</h3>
+        <p>High-quality food for cats of all ages, ensuring balanced nutrition.</p>
+        <p class="price">₹1500</p>
+        <button class="add-to-cart" data-product="Healthy Cat Food" data-price="1500" data-img="petfood2.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Healthy Cat Food" data-price="1500" data-img="petfood2.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood3.jpg" alt="Pet Food 3">
+        <h3>Organic Dog Treats</h3>
+        <p>100% organic treats to keep your dog happy and healthy.</p>
+        <p class="price">₹800</p>
+        <button class="add-to-cart" data-product="Organic Dog Treats" data-price="800" data-img="petfood3.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Organic Dog Treats" data-price="800" data-img="petfood3.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood4.jpg" alt="Pet Food 4">
+        <h3>Pet Shampoo</h3>
+        <p>Gentle on fur, tough on dirt. Keeps your pet fresh and clean.</p>
+        <p class="price">₹500</p>
+        <button class="add-to-cart" data-product="Pet Shampoo" data-price="500" data-img="petfood4.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Shampoo" data-price="500" data-img="petfood4.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood5.jpg" alt="Pet Food 5">
+        <h3>Dog Collar</h3>
+        <p>Comfortable and stylish collar for your furry friend.</p>
+        <p class="price">₹1000</p>
+        <button class="add-to-cart" data-product="Dog Collar" data-price="1000" data-img="petfood5.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Dog Collar" data-price="1000" data-img="petfood5.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood6.jpg" alt="Pet Food 6">
+        <h3>Pet Bed</h3>
+        <p>Soft and comfortable bed for your pet's peaceful sleep.</p>
+        <p class="price">₹2000</p>
+        <button class="add-to-cart" data-product="Pet Bed" data-price="2000" data-img="petfood6.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Bed" data-price="2000" data-img="petfood6.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood7.jpg" alt="Pet Food 7">
+        <h3>Cat Litter Box</h3>
+        <p>Eco-friendly litter box for your cat’s convenience.</p>
+        <p class="price">₹1200</p>
+        <button class="add-to-cart" data-product="Cat Litter Box" data-price="1200" data-img="petfood7.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Cat Litter Box" data-price="1200" data-img="petfood7.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood8.jpg" alt="Pet Food 8">
+        <h3>Pet Travel Carrier</h3>
+        <p>Comfortable and secure travel carrier for your pet’s journey.</p>
+        <p class="price">₹1800</p>
+        <button class="add-to-cart" data-product="Pet Travel Carrier" data-price="1800" data-img="petfood8.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Travel Carrier" data-price="1800" data-img="petfood8.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood9.jpg" alt="Pet Food 9">
+        <h3>Pet Brush</h3>
+        <p>Easy-to-use brush to keep your pet's coat shiny and healthy.</p>
+        <p class="price">₹400</p>
+        <button class="add-to-cart" data-product="Pet Brush" data-price="400" data-img="petfood9.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Brush" data-price="400" data-img="petfood9.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood10.jpg" alt="Pet Food 10">
+        <h3>Pet Harness</h3>
+        <p>Adjustable and comfortable harness for safe walks.</p>
+        <p class="price">₹600</p>
+        <button class="add-to-cart" data-product="Pet Harness" data-price="600" data-img="petfood10.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Harness" data-price="600" data-img="petfood10.jpg">Buy Now</button>
+    </div>
+    
+    <!-- Repeat similar blocks for products 11-20 -->
+    
+    <div class="product-card">
+        <img src="petfood11.jpg" alt="Pet Food 11">
+        <h3>Pet Toothbrush</h3>
+        <p>Keep your pet's teeth clean and healthy.</p>
+        <p class="price">₹300</p>
+        <button class="add-to-cart" data-product="Pet Toothbrush" data-price="300" data-img="petfood11.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Toothbrush" data-price="300" data-img="petfood11.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood12.jpg" alt="Pet Food 12">
+        <h3>Pet Water Bottle</h3>
+        <p>Portable water bottle for your pet on the go.</p>
+        <p class="price">₹350</p>
+        <button class="add-to-cart" data-product="Pet Water Bottle" data-price="350" data-img="petfood12.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Water Bottle" data-price="350" data-img="petfood12.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood13.jpg" alt="Pet Food 13">
+        <h3>Dog Leash</h3>
+        <p>Strong and durable leash for your dog's walks.</p>
+        <p class="price">₹700</p>
+        <button class="add-to-cart" data-product="Dog Leash" data-price="700" data-img="petfood13.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Dog Leash" data-price="700" data-img="petfood13.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood14.jpg" alt="Pet Food 14">
+        <h3>Pet Food Storage Container</h3>
+        <p>Keep your pet's food fresh with this airtight container.</p>
+        <p class="price">₹900</p>
+        <button class="add-to-cart" data-product="Pet Food Storage Container" data-price="900" data-img="petfood14.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Food Storage Container" data-price="900" data-img="petfood14.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood15.jpg" alt="Pet Food 15">
+        <h3>Pet First Aid Kit</h3>
+        <p>Complete first aid kit for your pet’s emergencies.</p>
+        <p class="price">₹1500</p>
+        <button class="add-to-cart" data-product="Pet First Aid Kit" data-price="1500" data-img="petfood15.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet First Aid Kit" data-price="1500" data-img="petfood15.jpg">Buy Now</button>
+    </div>
+    
+    <div class="product-card">
+        <img src="petfood16.jpg" alt="Pet Food 16">
+        <h3>Pet Jacket</h3>
+        <p>Warm and cozy jacket for your pet during winter.</p>
+        <p class="price">₹1200</p>
+        <button class="add-to-cart" data-product="Pet Jacket" data-price="1200" data-img="petfood16.jpg">Add to Cart</button>
+        <button class="buy-now" data-product="Pet Jacket" data-price="1200" data-img="petfood16.jpg">Buy Now</button>
+    </div>
+    
+      <!-- Product 17 -->
+      <div class="product-card">
+        <img src="petfood17.jpg" alt="Pet Food 17">
+        <h3>Organic Pet Food</h3>
+        <p>Eco-friendly organic food for your pets, rich in all essential nutrients.</p>
+        <p class="price">₹2800</p>
+        <button class="add-to-cart" data-product="Organic Pet Food" data-price="2800">Add to Cart</button>
+        <button class="buy-now" data-product="Organic Pet Food" data-price="2800">Buy Now</button>
+      </div>
+
+      <!-- Product 18 -->
+      <div class="product-card">
+        <img src="petfood18.jpg" alt="Pet Food 18">
+        <h3>Protein-packed Fish Food</h3>
+        <p>Full of protein and essential fats for your fish to thrive.</p>
+        <p class="price">₹950</p>
+        <button class="add-to-cart" data-product="Protein-packed Fish Food" data-price="950">Add to Cart</button>
+        <button class="buy-now" data-product="Protein-packed Fish Food" data-price="950">Buy Now</button>
+      </div>
+
+      <!-- Product 19 -->
+      <div class="product-card">
+        <img src="petfood19.jpg" alt="Pet Food 19">
+        <h3>Dog Meal Mix</h3>
+        <p>A hearty mix for your dog, combining meat, veggies, and grains.</p>
+        <p class="price">₹3500</p>
+        <button class="add-to-cart" data-product="Dog Meal Mix" data-price="3500">Add to Cart</button>
+      <button class="buy-now" data-product="Dog Meal Mix" data-price="3500">Buy Now</button>
+      </div>
+
+      <!-- Product 20 -->
+      <div class="product-card">
+        <img src="petfood20.jpg" alt="Pet Food 20">
+        <h3>Cat Tuna Meal</h3>
+        <p>Delicious tuna-based meal for your cat with all essential nutrients.</p>
+        <p class="price">₹1700</p>
+        <button class="add-to-cart" data-product="Cat Tuna Meal" data-price="1700">Add to Cart</button>
+        <button class="buy-now" data-product="Cat Tuna Meal" data-price="1700">Buy Now</button>
+      </div>
+    </div>
+    <script>
+            // Initialize total price and cart
+let totalPrice = 0;
+let cart = [];
+
+// Elements
+const cartIcon = document.getElementById('cart-icon');
+const cartContainer = document.getElementById('cart-container');
+const cartItemsList = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
+const totalPriceElement = document.getElementById('total-price');
+const closeCartButton = document.getElementById('close-cart');
+const checkoutButton = document.getElementById('buy-all-btn');
+
+// Event listener for "Add to Cart" buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart');  // Fixed to use correct class
+addToCartButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // Get product details from the button's data attributes
+        const productName = button.getAttribute('data-product');
+        const productPrice = parseInt(button.getAttribute('data-price'), 10);
+        const productImg = button.getAttribute('data-img');
+
+        // Add product to cart
+        cart.push({ name: productName, price: productPrice, img: productImg });
+
+        // Update total price
+        totalPrice += productPrice;
+
+        // Update cart count and total price
+        cartCount.textContent = cart.length;
+        totalPriceElement.textContent = totalPrice;
+
+        // Add the product to the cart items list
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <img src="${productImg}" alt="${productName}" style="width: 30px; height: 30px; margin-right: 10px;">
+            ${productName} - ₹${productPrice}
+            <button class="remove-btn">Remove</button>
+        `;
+
+        // Remove product from cart
+        li.querySelector('.remove-btn').addEventListener('click', () => {
+            removeFromCart(cart.length - 1, li, productPrice);
+        });
+
+        cartItemsList.appendChild(li);
+    });
+});
+
+// Open cart container
+cartIcon.addEventListener('click', () => {
+    cartContainer.classList.add('show');
+});
+
+// Close cart container
+closeCartButton.addEventListener('click', () => {
+    cartContainer.classList.remove('show');
+});
+
+// Remove product from cart
+function removeFromCart(index, li, productPrice) {
+    cart.splice(index, 1);
+    cartItemsList.removeChild(li);
+
+    // Update total price
+    totalPrice -= productPrice;
+    totalPriceElement.textContent = totalPrice;
+
+    // Update cart count
+    cartCount.textContent = cart.length;
+}
+
+// Buy All
+checkoutButton.addEventListener('click', () => {
+    alert('Proceeding to checkout...');
+});
+
+        </script>
+    <style>
+        /* Same styles as before for cart icon, modal, and product layout */
+        /* Cart Icon */
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+/* Cart Icon */
+#cart-icon {
+            margin-top: 10px; /* Adds spacing below the navbar */
+            margin-left: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #cart-icon span {
+            background-color: #ff5722;
+            color: #fff;
+            
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Cart Container (Overlay) */
+        #cart-container {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            padding: 20px;
+            display: none;
+        }
+
+        #cart-container.show {
+            transform: translateX(0);
+            display: block;
+        }
+
+        #cart-container h3 {
+            margin-top:10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            max-height: 60%;
+        }
+
+        #cart-items li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        /* Product name, price, and button display styles */
+        .product-details {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #cart-items li button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart-items li button:hover {
+            background-color: #d32f2f;
+        }
+
+        #cart-total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(5, 5, 116);
+        }
+
+        .cart-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cart-btn:hover {
+    background-color: #45a049;
+}
+
+        #close-cart {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+
+    </style>
+    
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Little Paws | Helping every dog and cat find their way home.</p>
+  </footer>
+  <script src="Product.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav {
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px; /* Added padding for better spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow to nav */
+  background-color: #fff; /* Optional: Add a background color to navbar */
+  position: fixed;  /* Make navbar fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-btn {
+  padding: 6px 12px;
+  background-color: rgb(5, 5, 116);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #333;
+}
+
+/* Make sure search bar is aligned properly */
+.search-container {
+  margin-left: 20px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-container {
+    margin-top: 10px;
+    align-self: stretch;
+  }
+
+  .search-input, .search-btn {
+    font-size: 1rem;
+  }
+}
+.sign-in-btn {
+  background-color:rgb(5, 5, 116);
+  color: #fff; /* white */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-in-btn:hover {
+  background-color:rgb(5, 5, 116);
+}
+.logo {
+  display: flex;
+  align-items: center; /* Ensures text and image are aligned vertically */
+  font-size: 1.8rem;
+  color: rgb(5, 5, 116);
+}
+
+.logo img {
+  width: 50px; /* Resizing logo image */
+  height: auto;
+  margin-right: 10px; /* Adds space between image and text */
+}
+
+.lineer {
+  display: none; /* Initially hide hamburger for larger screens */
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.lineer .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+/* Navigation Links */
+.nav__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Spacing between nav items */
+}
+
+.nav__link a {
+  display: block;
+  padding: 15px 20px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+.dropdown a {
+  display: block;
+  padding: 15px 20px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+  text-align: center;
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow to the dropdown */
+}
+
+/* Style dropdown items */
+.dropdown-content a {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change background on hover */
+.dropdown-content a:hover {
+  width: 100%;
+  background-color: rgb(110, 110, 110);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav__link a:hover {
+  background-color: rgb(110, 110, 110)
+}
+
+/* Hide nav menu by default for mobile */
+.hide {
+  display: none;
+}
+.slideshow-container {
+  align-items: center;
+  position: relative;
+  max-height: 60%;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+/* Hide all images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fade effect */
+.fade {
+  animation: fade 10s ease-in-out infinite;
+}
+.text {
+  position:absolute;
+  bottom: 20px;  /* Position the text towards the bottom of the image */
+  left: 50%;  /* Center the text horizontally */
+  transform: translateX(-50%);  /* Ensure the text is perfectly centered */
+  text-align: center;
+  margin-bottom: 200px;
+  font-size: 10rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Adds shadow to text for better visibility */
+  opacity: 0;
+  animation: fadeInText 1s ease-in forwards;  /* Animation for text appearance */
+}
+@keyframes fadeInText {
+  100% {
+    opacity: 1;
+    /*transform: translateX(-50%) translateY(20px);  /* Start below the container */
+  }
+  100% {
+    opacity: 1;
+   /* transform: translateX(-50%) translateY(0);  /* End at the normal position */
+  }
+}
+
+@keyframes fade {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 600px) {
+  .nav__link {
+    display: flex;
+    flex-direction: row; /* Keep items in a row */
+    background: none;
+  }
+
+  .nav__link a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+  .lineer {
+    display: none;
+  }
+}
+
+/* Media query for smaller screens (show hamburger) */
+@media screen and (max-width: 600px) {
+  .lineer {
+    display: block;
+  }
+
+  .nav__link {
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: 5rem;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    z-index: 9999; /* Ensures the dropdown appears on top */
+  }
+
+  .nav__link a {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .nav__link a:hover {
+    background-color: lightcoral;
+  }
+
+  .nav__link.show {
+    display: block;
+  }
+}
+/* Information Box Styles */
+.info-box {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.info-box h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: rgb(5, 5, 116);
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+/* Common Box Styles */
+/* Common Box Styles */
+.info-box,
+.contact-box {
+  margin: 30px auto;
+  padding: 20px;
+  width: 100%; /* Make the box span the full width */
+  max-width: 100%; /* Ensure it doesn't shrink on wider screens */
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.6;
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
+}
+
+/* Specific Contact Box Styles */
+.contact-box h2,
+.info-box h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: rgb(5, 5, 116);
+}
+
+.contact-box p,
+.info-box p {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Add responsiveness */
+@media screen and (max-width: 600px) {
+  .info-box,
+  .contact-box {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .contact-box p,
+  .info-box p {
+    font-size: 0.9rem;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}

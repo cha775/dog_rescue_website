@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Little Paws</title>
+  </head>
+  <body>
+    <header>
+        <nav class="nav">
+            <a href="/" class="logo">
+              <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+              Little Paws
+            </a>
+          
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          
+            <div class="nav__link hide">
+              <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." class="search-input" />
+                <button class="search-btn" onclick="searchFunction()">Search</button>
+            </div>
+            
+              <div class="dropdown">
+                <a href="index.html">Home</a>
+                <!--<div class="dropdown-content">
+                  <a href="#subhome1">Sub Home 1</a>
+                  <a href="#subhome2">Sub Home 2</a>
+                </div>-->
+              </div>
+              <div class="dropdown">
+                <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="petfood.html">SHOP</a>
+                <div class="dropdown-content">
+                  <a href="petfood.html">PET FOOD</a>
+                  <a href="petcare.html">PET CARE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="about.html">ABOUT</a>
+                <div class="dropdown-content">
+                  <a href="about.html">OUR STORY</a>
+                  <a href="about.html#contact-section">CONTACT US</a>
+                  <a href="about.html#testimonials">TESTIMONIALS</a>
+                </div>
+              </div>
+              <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+            
+            </div>
+          </nav>
+
+          <!-- Image Slideshow -->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="image1.jpg" style="width: 100%" />
+    <div class="text">ADOPT<br> AN <br>ANGEL</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="image2.jpg" style="width: 100%" />
+    <div class="text">THEY<br> ARE <br>WAITING</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="image3.jpg" style="width: 100%" />
+    <div class="text">WAGGING<br> THEIR <br>TALE</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="image4.jpg" style="width: 100%" />
+    <div class="text">TO<br> FIND <br>THEIR</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="image5.jpg" style="width: 100%" />
+    <div class="text">WAY<br> BACK <br>HOME!</div>
+  </div>
+</div>
+<div class="info-box">
+    <h2>Introduction</h2>
+    <p><b>
+        Every year, millions of stray dogs struggle to survive on the streets, facing challenges such as hunger, disease, and harsh weather conditions. By adopting a stray dog, you’re not only giving a deserving animal a second chance but also reducing the number of homeless animals. Stray dogs are loving, intelligent, and incredibly loyal companions when given the opportunity.
+    </p>
+  </div>
+<div class="info-box">
+    <h2>Why Adopt a Stray Dog?</h2>
+    <p>
+        Save a Life
+        Stray dogs often face bleak futures. Adoption provides them with safety, love, and a home.
+        
+        Reduce Stray Population
+        By adopting, you’re helping address the issue of overpopulation and homelessness among dogs.
+        
+        Health Benefits
+        Owning a dog can lower stress, increase physical activity, and improve mental health.
+        
+        Unmatched Loyalty
+        Stray dogs are often incredibly grateful for being rescued, forming strong, lifelong bonds with their adopters.
+        </p>
+  </div>
+  <div class="info-box">
+    <h2>Adoption Process</h2>
+    <p>
+        Meet the Dogs
+        Browse through profiles or visit our shelter to meet the dogs available for adoption.
+        
+        Home Check & Interview
+        Ensure your home environment is safe and suitable for the dog you wish to adopt.
+        
+        Complete Paperwork
+        Fill out the necessary forms and agree to care and support your new companion.
+        
+        Welcome Home
+        Take your dog home and start building a beautiful relationship!
+        
+</p>        
+  </div>
+  <div class="info-box">
+    <h2>About Little Paws</h2>
+    <p>
+      Little Paws is dedicated to rescuing and rehoming stray animals, providing them with the love and care they deserve. Join us in our mission to create a better future for these angels.
+    </p>
+  </div>
+  <div class="contact-box">
+    <h2>Contact Us</h2>
+    <p>
+      📍 Address: 123 Paw Street, Animal Town, PA 12345<br />
+      📞 Phone: +91 (555) 123-4567<br />
+      📧 Email: contact@littlepaws.org
+    </p>
+    <p>
+      Feel free to reach out to us for adoptions, donations, or general inquiries. Together, we can make a difference!
+    </p></b>
+  </div>
+      <script src="script.js"></script>
+    </header>
+
+    <script src="script.js"></script>
+    <script>function searchFunction() {
+      // Get the search query from the input field
+      let query = document.getElementById("searchInput").value.toLowerCase();
+      // Get all the paragraphs in the page (or any other tags you want to search)
+      let content = document.querySelectorAll("p, h2, .info-box");  // Or use other tags like div, span, etc.
+      let results = [];
+  
+      // Loop through the content and check if the query is in the text
+      content.forEach(function(item) {
+          if (item.innerText.toLowerCase().includes(query)) {
+              // If the search query is found, push the item to results
+              results.push(item);
+              item.style.backgroundColor = "yellow";  // Highlight found text (can style it further)
+          } else {
+              item.style.backgroundColor = "";  // Reset the highlight if no match
+          }
+      });
+  
+      // If no results are found, alert the user
+      if (results.length === 0) {
+          alert("No results found!");
+      }
+  }
+  </script>
+  <script>// Serve the homepage when a user visits the root route '/'
+    app.get('/', (req, res) => {
+      res.sendFile(path.join(__dirname, 'public', 'index.html'));  // Adjust 'public' and 'index.html' as needed
+    });
+    </script>
+    <footer>
+        <p>© 2024 Little Paws | Helping every dog find a home.</p>
+      </footer>
+  </body>
+  
+</html>

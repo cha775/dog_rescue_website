@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Adopt a Dog</title>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="Adopt.html">Adopt</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <main>
+    <section class="adoption-form-section">
+      <h1>Adopt Your New Friend</h1>
+      <form id="adoptionForm">
+        <label for="dogName">Dog Name:</label>
+        <input type="text" id="dogName" name="dogName" readonly>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+
+        <button type="submit" style="color: #ccc;">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Little Paws | Helping every dog find a home.</p>
+  </footer>
+  <style>
+    /* General Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+nav {
+  background-color: rgb(5, 5, 116);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Adoption Form Section */
+.adoption-form-section {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adoption-form-section h1 {
+  text-align: center;
+  color: rgb(5, 5, 116);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Form Styles */
+#adoptionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fffefe;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgb(44, 44, 235);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background-color: rgb(5, 5, 116);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(5, 5, 116);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .adoption-form-section {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+    </style>
+
+  <script src="form-script.js"></script>
+</body>
+</html>

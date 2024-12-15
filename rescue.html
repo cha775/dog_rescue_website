@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Rescue Form</title>
+  <link rel="stylesheet" href="rescue.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav class="nav">
+            <a href="/" class="logo">
+              <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+              Little Paws
+            </a>
+          
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          
+            <div class="nav__link hide">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input" />
+                    <button class="search-btn">Search</button>
+                  </div>
+              <div class="dropdown">
+                <a href="index.html">Home</a>
+                <!--<div class="dropdown-content">
+                  <a href="#subhome1">Sub Home 1</a>
+                  <a href="#subhome2">Sub Home 2</a>
+                </div>-->
+              </div>
+              <div class="dropdown">
+                <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="petfood.html">SHOP</a>
+                <div class="dropdown-content">
+                  <a href="#toys">TOYS</a>
+                  <a href="petfood.html">PET FOOD</a>
+                  <a href="petcare.html">PET CARE</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="about.html">ABOUT</a>
+                <div class="dropdown-content">
+                  <a href="about.html">OUR STORY</a>
+                  <a href="about.html#contact-section">CONTACT US</a>
+                  <a href="about.html#testimonials">TESTIMONIALS</a>
+                </div>
+              </div>
+              <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+            
+            </div>
+          </nav>
+      <header>
+      <br><br><br><br><br>
+    <h1>Dog Rescue Form</h1>
+    <p>Fill out the details of the dog you are rescuing.</p>
+</header>
+  <main>
+    <form id="rescueForm">
+        <label for="dogName">Dog's Name:</label>
+        <input type="text" id="dogName" name="dogName" required><br><br>
+      
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" required><br><br>
+      
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+      
+        <label for="rescuerName">Rescuer's Name:</label>
+        <input type="text" id="rescuerName" name="rescuerName" required><br><br>
+      
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required><br><br>
+      
+        <label for="additionalInfo">Additional Info:</label>
+        <textarea id="additionalInfo" name="additionalInfo"></textarea><br><br>
+      
+        <label for="dogImage">Upload Dog's Image:</label>
+        <input type="file" id="dogImage" name="dogImage" accept="image/*" required><br><br>
+      
+        <button type="submit">Submit</button>
+      </form>
+  </main>
+
+  <footer>
+    <p>&copy; © 2024 Little Paws | Helping every dog find a home.</p>
+  </footer>
+
+  <script src="rescue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

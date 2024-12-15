@@ -1,0 +1,69 @@
+.adoption-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .adoption-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .dog-profiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fdfdfd;
+  }
+  
+  .dog-card {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dog-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .dog-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .dog-card h3 {
+    margin: 10px 0;
+  }
+  
+  .dog-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .adopt-btn {
+    background-color:  rgb(5, 5, 116);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .adopt-btn:hover {
+    background-color: #4d5ce0;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  

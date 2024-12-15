@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Dog Rescue Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+        }
+        .title {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .slide img {
+            max-width: 30%;
+            border-radius: 10px;
+            height: auto;
+        }
+        .slide-info {
+            text-align: left;
+            flex-grow: 1;
+        }
+        .slide-info h3 {
+            color: #6c63ff;
+            margin-bottom: 10px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+            user-select: none;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .dot-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot.active {
+            background-color: #6c63ff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        /* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+.p,h1{
+    text-align: center;
+}
+
+    </style>
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="logo">
+          <img src="dogg.png" alt="Logo" style="width: 50px; height: auto;">
+          Little Paws
+        </a>
+      
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      
+        <div class="nav__link hide">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input" />
+                <button class="search-btn">Search</button>
+              </div>
+          <div class="dropdown">
+            <a href="index.html">Home</a>
+            <!--<div class="dropdown-content">
+              <a href="#subhome1">Sub Home 1</a>
+              <a href="#subhome2">Sub Home 2</a>
+            </div>-->
+          </div>
+          <div class="dropdown">
+            <a href="Adopt.html">BE INVOLVED</a>
+                <div class="dropdown-content">
+                  <a href="Adopt.html">ADOPT</a>
+                  <a href="volunteer.html">VOLUNTEER</a>
+                  <a href="rescue.html">RESCUE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="petfood.html">SHOP</a>
+            <div class="dropdown-content">
+
+              <a href="petfood.html">PET FOOD</a>
+              <a href="petcare.html">PET CARE</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="about.html">ABOUT</a>
+            <div class="dropdown-content">
+              <a href="about.html">OUR STORY</a>
+              <a href="about.html#contact-section">CONTACT US</a> <!-- Anchor Link -->
+              <a href="about.html#testimonials">TESTIMONIALS</a>
+            </div>
+          </div>
+          <button class="sign-in-btn" onclick="location.href='signin.html'">Sign In</button>
+        
+        </div>
+      </nav>
+<header>
+    <h1>About Us</h1>
+    <p>Meet the passionate team behind Dog Rescue</p>
+</header>
+
+<div class="container">
+    <h2 class="title">Our Team</h2>
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide">
+            <img src="Person1.jpg" alt="Team Member 1">
+            <div class="slide-info">
+                <h3>Chaman K B</h3>
+                <p>Chaman has dedicated his life to rescuing and rehoming dogs in need.</p>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="Person2.jpg" alt="Team Member 2">
+            <div class="slide-info">
+                <h3>Hruthik P</h3>
+                <p>Hruthik ensures every rescued dog gets top-notch medical care.</p>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="Person3.jpg" alt="Team Member 3">
+            <div class="slide-info">
+                <h3>Bhanuprakash P L</h3>
+                <p>Bhanuprakash helps rehabilitate dogs and prepares them for adoption.</p>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="Person4.jpg" alt="Team Member 4">
+            <div class="slide-info">
+                <h3>Yashwanth Gowda</h3>
+                <p>Yashwanth manages our amazing volunteers and community events.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+</div>
+<section id="contact-section" style="margin-top: 50px; padding: 20px;">
+    <div style="max-width: 700px; margin: auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+        <h2 style="text-align: center; color: #6c63ff;">Contact Us</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #555;">We’d love to hear from you! Fill out the form below or reach us directly.</p>
+
+        <!-- Contact Form -->
+        <form>
+            <label for="name" style="display: block; margin-bottom: 10px; font-weight: bold;">Name</label>
+            <input type="text" id="name" name="name" required 
+                style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="email" style="display: block; margin-bottom: 10px; font-weight: bold;">Email</label>
+            <input type="email" id="email" name="email" required 
+                style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="message" style="display: block; margin-bottom: 10px; font-weight: bold;">Message</label>
+            <textarea id="message" name="message" rows="5" required 
+                style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+
+            <button type="submit" 
+                style="width: 100%; background-color: #6c63ff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Send Message</button>
+        </form>
+    </div>
+</section>
+<p><h1><b>OR</b></h1></p>
+<section>
+    <div class="contact-box">
+        <h2>Contact Us</h2>
+        <p>
+          📍 Address: 123 Paw Street, Animal Town, PA 12345<br />
+          📞 Phone: +91 (555) 123-4567<br />
+          📧 Email: contact@littlepaws.org
+        </p>
+        <p>
+          Feel free to reach out to us for adoptions, donations, or general inquiries. Together, we can make a difference!
+        </p></b>
+      </div>
+</section>
+<section>
+    <!-- Testimonials Section -->
+<section id="testimonials" style="margin: 50px auto; padding: 20px; background-color: #f9f9f9;">
+    <div style="max-width: 1000px; margin: auto; text-align: center;">
+        <h2 style="color: #6c63ff;">What People Say</h2>
+        <p style="margin-bottom: 30px; color: #555;">Heartwarming stories from our adopters and volunteers.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <!-- Testimonial Card 1 -->
+            <div style="background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; text-align: left;">
+                <img src="people1.jpg" alt="Happy Adopter" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <h4 style="color: #6c63ff;">Sarah Johnson</h4>
+                <p style="font-style: italic;">“Adopting Max was the best decision ever! He has brought so much love and joy to our family.”</p>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div style="background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; text-align: left;">
+                <img src="people2.jpg" alt="Rescue Volunteer" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <h4 style="color: #6c63ff;">John Lee</h4>
+                <p style="font-style: italic;">“Volunteering with Little Paws has been life-changing. Saving lives is the most rewarding experience.”</p>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div style="background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; max-width: 300px; text-align: left;">
+                <img src="people3.jpg" alt="Adopter" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px;">
+                <h4 style="color: #6c63ff;">Emily Clark</h4>
+                <p style="font-style: italic;">“The adoption process was smooth and the team ensured that Bella found her forever home.”</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<footer>
+    <p>Our team is committed to giving every dog a second chance at life. Thank you for your support!</p>
+</footer>
+
+<script>
+    let currentIndex = 1;
+    showSlide(currentIndex);
+
+    function changeSlide(n) {
+        showSlide(currentIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlide(currentIndex = n);
+    }
+
+    function showSlide(n) {
+        let slides = document.querySelectorAll('.slide');
+        let dots = document.querySelectorAll('.dot');
+        if (n > slides.length) currentIndex = 1;
+        if (n < 1) currentIndex = slides.length;
+        slides.forEach(slide => slide.style.display = 'none');
+        dots.forEach(dot => dot.classList.remove('active'));
+        slides[currentIndex - 1].style.display = 'flex';
+        dots[currentIndex - 1].classList.add('active');
+    }
+</script>
+
+
+</body>
+</html>
